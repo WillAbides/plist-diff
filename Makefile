@@ -13,6 +13,9 @@ bin/shellcheck:
 bin/gofumpt:
 	script/bindown install $(notdir $@)
 
+bin/plist-diff: gobuildcache
+	go build -o  $@ .
+
 HANDCRAFTED_REV := 082e94edadf89c33db0afb48889c8419a2cb46a9
 bin/handcrafted:
 	GOBIN=${CURDIR}/bin \
